@@ -1,0 +1,79 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-bis: #ffbb6711;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+$color-secondary-overlay: #101d2ce3;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito',
+sans-serif;
+$font-display: 'Josefin Sans',
+sans-serif;
+
+/* SMALL RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    color: $color-grey-dark-2;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6rem;
+    font-size: 1.5rem;
+}
+
+/* PAGE LAYOUT */
+.container {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+
+    @include responsive(phone) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-section {
+    min-height: 100vh;
+
+    @include responsive(phone) {
+        min-height: 80vh;
+    }
+}
+
+.side-nav {
+    background: $color-primary;
+}
+
+@mixin button-style {
+    width: 15rem;
+    margin-bottom: 4rem;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem 1rem;
+    border: 0;
+    background: $color-primary;
+    outline: none;
+    cursor: pointer;
+}

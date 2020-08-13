@@ -1,0 +1,27 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+    cursor: pointer;
+    
+    @include responsive(phone) {
+        align-items: flex-end;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-right: 1em;
+    }
+
+    &>span {
+        margin-bottom: 1rem;
+        width: 50%;
+        height: 2px;
+        background: #fff;
+
+        @include responsive(phone) {
+            width: 2em;
+        }
+    }
+
+}

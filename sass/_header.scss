@@ -1,0 +1,231 @@
+.header {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    min-height: 70vh;
+
+    @include responsive(tab-land) {
+        grid-template-columns: 65% 1fr;
+        min-height: 50vh;
+    }
+
+    @include responsive(tab-port) {
+        min-height: 40vh;
+    }
+
+    @include responsive(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    &__logo-title {
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    &__logo-title img {
+        width: 13rem;
+    }
+
+    &__middle-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 5rem;
+
+        @include responsive(phone) {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        &>p {
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        &>h1 {
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+            line-height: 3rem;
+            font-family: "Varela", sans-serif;
+            color: #fff;
+
+            @include responsive(phone) {
+                margin-bottom: 1.5rem;
+                line-height: 1.25em;
+            }
+        }
+
+        &>div button {
+            @include button-style;
+
+            @include responsive(phone) {
+                width: 50%;
+            }
+        }
+    }
+
+    &__bottom-area {
+        margin-top: auto;
+
+
+        @include responsive(phone) {
+            margin-top: 1em;
+        }
+    }
+
+    .top-part {
+        display: grid;
+        grid-template-columns: 1fr 14% 1fr;
+        justify-content: center;
+        align-self: center;
+        height: 3rem;
+
+        @include responsive(phone) {
+            grid-template-columns: 1fr;
+        }
+
+        .line {
+            height: 1px;
+            background: $color-grey-light-2;
+
+            @include responsive(phone) {
+                display: none;
+            }
+        }
+
+        .bottom-label {
+            font-size: 1.25rem;
+            color: $color-grey-light-2;
+            font-weight: 400;
+            text-align: center;
+            margin-top: -1rem;
+            padding: 0;
+            height: 2rem;
+
+            @include responsive(phone) {
+                margin-top: .4rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: .85em;
+                padding-bottom: 2em;
+                border-bottom: 1px solid $color-grey-light-2;
+            }
+        }
+    }
+
+    .bottom-part {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2rem;
+
+
+        @include responsive(phone) {
+            margin-top: 2em;
+            padding-bottom: 0;
+            grid-template-columns: 1fr;
+        }
+
+        div {
+            text-align: center;
+
+            @include responsive(phone) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .logo-bi {
+            width: 4rem;
+        }
+
+        .logo-tech {
+            width: 12rem;
+        }
+
+        .logo-forbes {
+            width: 7rem;
+        }
+
+        .logo-bbc {
+            width: 7rem;
+        }
+    }
+
+    &__left-side {
+        display: flex;
+        flex-direction: column;
+        padding: 0 7rem;
+        background-image: linear-gradient($color-secondary-overlay, $color-secondary), url(../img/hero.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include responsive(tab-land) {
+            padding: 0 1.5em;
+        }
+
+        @include responsive(phone) {
+            padding: 0 1em;
+        }
+    }
+
+    &__right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $color-secondary;
+
+        @include responsive(phone) {
+            display: none;
+        }
+
+        .realtors__section {
+            color: #fff;
+
+            &--person {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                margin-top: 1.5rem;
+
+                img {
+                    width: 6rem;
+                    justify-self: center;
+                    align-self: center;
+                    border-radius: 50%;
+                }
+            }
+
+            .details {
+                margin-left: -1rem;
+
+                .name {
+                    font-weight: bold;
+                    letter-spacing: 1px;
+
+                }
+
+                .name::first-letter {
+                    text-transform: uppercase;
+                }
+
+                .sold {
+                    font-size: .83rem;
+                    color: $color-grey-light-2;
+                    text-transform: uppercase;
+                    letter-spacing: .5px;
+                }
+            }
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+    }
+}

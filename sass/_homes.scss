@@ -1,0 +1,84 @@
+.story__container {
+    width: 80%;
+    margin: 7rem auto 0;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 7rem 2rem;
+    
+    @include responsive(tab-port) {
+        margin: 4rem auto 0;
+        grid-template-columns: repeat(2 , 1fr);
+        grid-gap: 2rem 2rem;
+    }
+    
+    @include responsive(phone) {
+        width: 100%;
+        margin: 1rem auto 0;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem 2rem;
+    }
+}
+
+.story__pictures {
+    max-width: 20rem;
+    justify-self: center;
+    
+    @include responsive(tab-port) {
+        justify-self: center;
+        max-width: 25em;
+    }
+
+    &--card {
+
+        img {
+            width: 100%;
+            z-index: -1;
+        }
+
+        .btn-container {
+            margin: -1.5rem auto -2rem;
+            text-align: center;
+
+            .btn1 {
+                width: 80%;
+                height: 3rem;
+                color: #fff;
+                letter-spacing: .5px;
+                background: $color-secondary;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+
+    &--body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 2rem;
+        background: $color-primary-bis;
+        padding: 5rem 1rem 2rem;
+
+        .story__icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: $color-primary;
+        }
+
+        span {
+            display: inline-block;
+            margin: .5rem;
+            font-size: 1rem;
+        }
+    }
+
+    .contact-btn {
+        width: 100%;
+        height: 3rem;
+        color: #fff;
+        text-transform: uppercase;
+        background: $color-primary-dark;
+        border: none;
+    }
+}

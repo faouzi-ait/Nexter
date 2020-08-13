@@ -1,0 +1,97 @@
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 65vh;
+
+    @include responsive(tab-port) {
+        grid-template-columns: 1fr;
+        min-height: 30vh;
+    }
+
+    @include responsive(phone) {
+        grid-template-columns: 1fr;
+    }
+
+    &__left {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(rgba(199, 199, 14, 0.4), rgba(199, 199, 14, 0.4)), url(../img/back.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include responsive(tab-port) {
+            display: none;
+        }
+
+        @include responsive(phone) {
+            display: none;
+        }
+
+        img {
+            width: 40rem;
+        }
+
+        img:last-of-type {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            @include responsive(tab-land) {
+                left: 25%;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-grey-light-1;
+
+        @include responsive(phone) {
+            padding: 3em;
+        }
+
+        &--container {
+            flex: .7;
+            height: 60%;
+
+            @include responsive(tab-port) {
+                flex: .8;
+                height: 80%;
+            }
+
+            @include responsive(phone) {
+                flex: .9;
+                height: 50%;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                color: $color-primary;
+                margin-bottom: 1rem;
+            }
+
+            .title {
+                line-height: 2.5rem;
+                letter-spacing: 1px;
+                font-weight: bold;
+                font-size: 2rem;
+                font-style: italic;
+            }
+
+            p:last-of-type {
+                margin: 2rem 0;
+                font-size: 1.25rem;
+            }
+
+            div button {
+                @include button_style
+            }
+        }
+    }
+}
